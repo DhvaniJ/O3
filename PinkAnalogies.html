@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How To Think Visually Using Visual Analogies</title>
+  <!-- Load Poppins from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8e6f1;
+      color: #222; /* Dark grey close to black */
+    }
+    /* Header styling: title aligned left; search on top right */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .header-left {
+      text-align: left;
+    }
+    .header-left h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: #b3007a; /* Dark pink */
+    }
+    .header-left h2 {
+      margin: 5px 0 0 0;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ad1457;
+    }
+    /* Search styling */
+    .search-wrapper {
+      position: relative;
+      width: 200px;
+    }
+    .search-wrapper input {
+      width: 100%;
+      padding: 6px 30px 6px 8px; /* Right padding for the icon button */
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    .search-wrapper button {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 0;
+      outline: none;
+    }
+    /* Card container as a 6‑column grid */
+    #card-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    /* Each card uses the full width of its grid cell and keeps a portrait (3:4) ratio */
+    .flip-card {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      perspective: 1000px;
+      cursor: pointer;
+      position: relative;
+    }
+    .flip-card-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    /* Front and Back face: left-aligned text and 8px padding */
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #ff66b2;
+      border-radius: 10px;
+      background-color: #ffe6f2;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* More subtle shadow */
+      backface-visibility: hidden;
+      padding: 8px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      text-align: left;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #b3007a;
+    }
+    .card-subtitle {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #ad1457;
+    }
+    .chart-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 6px;
+      border-radius: 5px;
+    }
+    .flip-instruction {
+      font-size: 10px;
+      color: #555;
+      margin-top: 6px;
+    }
+    /* Footer styling */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+    footer a {
+      color: #b3007a;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with title (left) and search (right) -->
+  <header>
+    <div class="header-left">
+      <h1>How To Think Visually Using Visual Analogies</h1>
+      <h2>by Anna Vital</h2>
+    </div>
+    <div class="header-right">
+      <div class="search-wrapper">
+        <input type="text" id="search-input" placeholder="🔍" />
+        <button id="search-clear" type="button">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Card Container: 72 cards in a 6-column grid -->
+  <div id="card-container">
+    <!-- Card 1: Pie Chart -->
+    <div class="flip-card" data-search="pie chart popular criticized parts whole two segments">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Pie Chart</div>
+          <div class="card-subtitle">The most popular and criticized</div>
+          <img class="chart-image" src="Images/pie-chart.png" alt="Pie Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents parts of a whole in a circular form.
+          <br><br>
+          <strong>History:</strong> As Edward Tufte noted, "the only thing worse than one pie chart is lots of them." Otto Neurath preferred semantic iconographics.
+          <br><br>
+          <strong>Usage:</strong> Best used with two segments for clear comparisons.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/pie-chart" target="_blank">What Do 7 Billion People Do</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Venn Diagram -->
+    <div class="flip-card" data-search="venn diagram overlap sets relationships">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Venn Diagram</div>
+          <div class="card-subtitle">Shows overlapping relationships</div>
+          <img class="chart-image" src="Images/venn-diagram.png" alt="Venn Diagram">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Illustrates the commonalities between groups.
+          <br><br>
+          <strong>History:</strong> Widely used despite its limitations in quantifying overlap.
+          <br><br>
+          <strong>Usage:</strong> Effective for simple comparisons of 2–3 sets.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/venn-diagram" target="_blank">The Anatomy Of Determination</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Concentric Diagram -->
+    <div class="flip-card" data-search="concentric diagram onion center layers importance">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Concentric Diagram</div>
+          <div class="card-subtitle">Layers radiating from the center</div>
+          <img class="chart-image" src="Images/concentric-diagram.png" alt="Concentric Diagram">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Depicts a hierarchy with decreasing importance from the center.
+          <br><br>
+          <strong>History:</strong> Used to emphasize a central idea with peripheral layers.
+          <br><br>
+          <strong>Usage:</strong> Ideal for visualizing core concepts versus supporting details.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/concentric-diagram" target="_blank">Going Through Anti-Success</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Circular Chart -->
+    <div class="flip-card" data-search="circular chart compare schedule time project">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Circular Chart</div>
+          <div class="card-subtitle">Comparing lengths on a circle</div>
+          <img class="chart-image" src="Images/circular-chart.png" alt="Circular Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses a circle to represent 100% as a whole.
+          <br><br>
+          <strong>History:</strong> Evolved as a means to show proportional relationships.
+          <br><br>
+          <strong>Usage:</strong> Suitable for schedules, life spans, or project durations.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/circular-chart" target="_blank">Calorie Intake and Outtake</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Bubble Chart -->
+    <div class="flip-card" data-search="bubble chart quantities comparison circles">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Bubble Chart</div>
+          <div class="card-subtitle">Rough comparison of quantities</div>
+          <img class="chart-image" src="Images/bubble-chart.png" alt="Bubble Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses bubbles to depict relative data sizes.
+          <br><br>
+          <strong>History:</strong> Developed for rough comparisons when precision is less critical.
+          <br><br>
+          <strong>Usage:</strong> Effective for comparing budgets, populations, etc.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/bubble-chart" target="_blank">What The Internet Thinks About</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Bubble Race Chart -->
+    <div class="flip-card" data-search="bubble race chart positions education">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Bubble Race Chart</div>
+          <div class="card-subtitle">Bubbles with positional meaning</div>
+          <img class="chart-image" src="Images/bubble-race-chart.png" alt="Bubble Race Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Assigns extra meaning (like education level) to bubble positions.
+          <br><br>
+          <strong>History:</strong> Inspired by dynamic data displays such as Hans Rosling’s work.
+          <br><br>
+          <strong>Usage:</strong> Enhances comparisons by adding a positional variable.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/bubble-race-chart" target="_blank">Hans Rosling’s Bubble Chart</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Line Chart -->
+    <div class="flip-card" data-search="line chart trends time series changes">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Line Chart</div>
+          <div class="card-subtitle">Series of connected points</div>
+          <img class="chart-image" src="Images/line-chart.png" alt="Line Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Shows the progression of data over time.
+          <br><br>
+          <strong>History:</strong> One of the earliest and most versatile chart types.
+          <br><br>
+          <strong>Usage:</strong> Used for illustrating trends in time series such as temperature or heart rate.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/line-chart" target="_blank">Marathon Heart Rate Trends</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Area Chart -->
+    <div class="flip-card" data-search="area chart trend comparison fill">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Area Chart</div>
+          <div class="card-subtitle">Filled area between lines</div>
+          <img class="chart-image" src="Images/area-chart.png" alt="Area Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Highlights the volume under a trend line.
+          <br><br>
+          <strong>History:</strong> Evolved from line charts to compare multiple datasets.
+          <br><br>
+          <strong>Usage:</strong> Ideal for showing cumulative totals.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/area-chart" target="_blank">Brockhaus Encyclopedia Timeline</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9: Scatter Plot -->
+    <div class="flip-card" data-search="scatter plot clusters outliers">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Scatter Plot</div>
+          <div class="card-subtitle">Clusters and outliers</div>
+          <img class="chart-image" src="Images/scatter-plot.png" alt="Scatter Plot">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Displays data as individual points to reveal clusters.
+          <br><br>
+          <strong>History:</strong> Widely used in statistics to show correlations.
+          <br><br>
+          <strong>Usage:</strong> Helps in identifying outliers and clusters.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/scatter-plot" target="_blank">Best in Show Data-Dog Visualization</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 10: Sunburst Chart -->
+    <div class="flip-card" data-search="sunburst chart hierarchy multi level">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Sunburst Chart</div>
+          <div class="card-subtitle">Hierarchical multi-level pie chart</div>
+          <img class="chart-image" src="Images/sunburst-chart.png" alt="Sunburst Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Conveys hierarchical data through concentric rings.
+          <br><br>
+          <strong>History:</strong> Developed to visualize nested structures, such as disk usage.
+          <br><br>
+          <strong>Usage:</strong> Best for representing hierarchical breakdowns.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/sunburst-chart" target="_blank">Linux File System Usage</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 11: Fan Chart -->
+    <div class="flip-card" data-search="fan chart genealogy evolution">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Fan Chart</div>
+          <div class="card-subtitle">Expanding like a fan</div>
+          <img class="chart-image" src="Images/fan-chart.png" alt="Fan Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Displays expansion from a central point.
+          <br><br>
+          <strong>History:</strong> Used for genealogies and evolutionary progress.
+          <br><br>
+          <strong>Usage:</strong> Ideal for showing growth or generational changes.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/fan-chart" target="_blank">Language Tree Infographic</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 12: Windrose Chart -->
+    <div class="flip-card" data-search="windrose chart direction wind">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Windrose Chart</div>
+          <div class="card-subtitle">Directional data visualization</div>
+          <img class="chart-image" src="Images/windrose-chart.png" alt="Windrose Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Visualizes data by direction, similar to wind patterns.
+          <br><br>
+          <strong>History:</strong> Originally used to display meteorological data.
+          <br><br>
+          <strong>Usage:</strong> Now applied in various fields such as mortality studies.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/windrose-chart" target="_blank">Florence Nightingale’s Mortality Diagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 13: Bar Chart -->
+    <div class="flip-card" data-search="bar chart compare exact values">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Bar Chart</div>
+          <div class="card-subtitle">Data represented with bars</div>
+          <img class="chart-image" src="Images/bar-chart.png" alt="Bar Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses bars to quantitatively compare values.
+          <br><br>
+          <strong>History:</strong> One of the earliest and most common chart types.
+          <br><br>
+          <strong>Usage:</strong> Best when exact numerical comparisons are needed.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/bar-chart" target="_blank">Engineer’s Salary Infographic</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 14: Tape Diagram -->
+    <div class="flip-card" data-search="tape diagram ratios measurement icons">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Tape Diagram</div>
+          <div class="card-subtitle">Visual representation of ratios</div>
+          <img class="chart-image" src="Images/tape-diagram.png" alt="Tape Diagram">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses tape-like segments to illustrate numerical ratios.
+          <br><br>
+          <strong>History:</strong> Developed as a simple method for comparing proportions.
+          <br><br>
+          <strong>Usage:</strong> Effective for comparing relative sizes.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/tape-diagram" target="_blank">From Poor To Rich Infographic</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 15: Gantt Chart -->
+    <div class="flip-card" data-search="gantt chart timeline scheduling projects">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Gantt Chart</div>
+          <div class="card-subtitle">Timeline of tasks</div>
+          <img class="chart-image" src="Images/gantt-chart.png" alt="Gantt Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents tasks and timelines in a structured format.
+          <br><br>
+          <strong>History:</strong> Originally developed for project scheduling.
+          <br><br>
+          <strong>Usage:</strong> Commonly used for planning and tracking projects.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/gantt-chart" target="_blank">A Perspective on Time</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 16: Tree Map -->
+    <div class="flip-card" data-search="tree map hierarchy nested rectangles">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Tree Map</div>
+          <div class="card-subtitle">Nested rectangles for hierarchy</div>
+          <img class="chart-image" src="Images/tree-map.png" alt="Tree Map">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses nested rectangles to show proportional hierarchies.
+          <br><br>
+          <strong>History:</strong> Evolved to break down budgets and subdivisions.
+          <br><br>
+          <strong>Usage:</strong> Best for visualizing parts of a whole within a hierarchy.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/tree-map" target="_blank">Causes Of Untimely Death</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 17: Grid -->
+    <div class="flip-card" data-search="grid equal cells order list">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Grid</div>
+          <div class="card-subtitle">Uniform, non-hierarchical layout</div>
+          <img class="chart-image" src="Images/grid.png" alt="Grid">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Organizes items in equal cells without hierarchy.
+          <br><br>
+          <strong>History:</strong> A simple, yet effective structure for organizing information.
+          <br><br>
+          <strong>Usage:</strong> Ideal for lists or non-ordered data.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/grid" target="_blank">Various Grid-based Infographics</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 18: Periodic Table -->
+    <div class="flip-card" data-search="periodic table grid elements typefaces">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Periodic Table</div>
+          <div class="card-subtitle">Structured grid with meaningful positions</div>
+          <img class="chart-image" src="Images/periodic-table.png" alt="Periodic Table">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Arranges items in a grid where each position carries significance.
+          <br><br>
+          <strong>History:</strong> Inspired by the chemical periodic table.
+          <br><br>
+          <strong>Usage:</strong> Commonly used for comparing typefaces and similar data.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/periodic-table" target="_blank">Periodic Table of Typefaces</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 19: Arc Diagram -->
+    <div class="flip-card" data-search="arc diagram interactions relationships">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Arc Diagram</div>
+          <div class="card-subtitle">Curved connections between nodes</div>
+          <img class="chart-image" src="Images/arc-diagram.png" alt="Arc Diagram">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses arcs to link related data points.
+          <br><br>
+          <strong>History:</strong> Effective for showing pairwise relationships.
+          <br><br>
+          <strong>Usage:</strong> Ideal for visualizing interactions such as collaborations.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/arc-diagram" target="_blank">Les Misérables Interactions</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 20: Sankey Chart -->
+    <div class="flip-card" data-search="sankey chart flow weighted lines">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Sankey Chart</div>
+          <div class="card-subtitle">Flow diagram with variable thickness</div>
+          <img class="chart-image" src="Images/sankey-chart.png" alt="Sankey Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Visualizes flows with line thickness representing magnitude.
+          <br><br>
+          <strong>History:</strong> Inspired by natural river systems.
+          <br><br>
+          <strong>Usage:</strong> Often used in energy and resource distribution analyses.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/sankey-chart" target="_blank">What Happens To Relationships</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 21: Chord Chart -->
+    <div class="flip-card" data-search="chord chart circular interactions">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Chord Chart</div>
+          <div class="card-subtitle">Circular interconnections</div>
+          <img class="chart-image" src="Images/chord-chart.png" alt="Chord Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses chords to depict the strength of interactions.
+          <br><br>
+          <strong>History:</strong> Evolved from arc diagrams into a circular format.
+          <br><br>
+          <strong>Usage:</strong> Best when comparing homogeneous variables.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/chord-chart" target="_blank">Uber Rides Visualization</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 22: Radar Chart -->
+    <div class="flip-card" data-search="radar chart spokes attributes">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Radar Chart</div>
+          <div class="card-subtitle">Multi-axis data comparison</div>
+          <img class="chart-image" src="Images/radar-chart.png" alt="Radar Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Compares multiple variables on radial axes.
+          <br><br>
+          <strong>History:</strong> A versatile tool for summarizing various metrics.
+          <br><br>
+          <strong>Usage:</strong> Ideal for comparing components of success.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/radar-chart" target="_blank">The Secret Of Success</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 23: Polar Grid -->
+    <div class="flip-card" data-search="polar grid extended spokes">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Polar Grid</div>
+          <div class="card-subtitle">Extended radar with extra spokes</div>
+          <img class="chart-image" src="Images/polar-grid.png" alt="Polar Grid">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Allows for more axes than a standard radar chart.
+          <br><br>
+          <strong>History:</strong> Adapted for detailed comparisons.
+          <br><br>
+          <strong>Usage:</strong> Commonly used for flavor profile visualizations.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/polar-grid" target="_blank">Whiskey Flavor Profiles</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 24: Spiral Graph -->
+    <div class="flip-card" data-search="spiral graph time cyclic evolution">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Spiral Graph</div>
+          <div class="card-subtitle">Cyclic time sequence</div>
+          <img class="chart-image" src="Images/spiral-graph.png" alt="Spiral Graph">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents time as a spiral to emphasize cycles.
+          <br><br>
+          <strong>History:</strong> Used to depict geological time and future predictions.
+          <br><br>
+          <strong>Usage:</strong> Ideal for historical and evolutionary data.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/spiral-graph" target="_blank">Geologic Time Spiral</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 25: Timeline -->
+    <div class="flip-card" data-search="timeline chronological events sequence">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Timeline</div>
+          <div class="card-subtitle">Sequential events</div>
+          <img class="chart-image" src="Images/timeline.png" alt="Timeline">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Arranges events in chronological order.
+          <br><br>
+          <strong>History:</strong> A traditional method for storytelling.
+          <br><br>
+          <strong>Usage:</strong> Effective for biographies and historical overviews.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/timeline" target="_blank">Biographies Visualization</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 26: Side-by-Side Comparison -->
+    <div class="flip-card" data-search="side by side comparison">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Side-by-Side Comparison</div>
+          <div class="card-subtitle">Parallel data sets</div>
+          <img class="chart-image" src="Images/side-by-side-comparison.png" alt="Side-by-Side Comparison">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Places two data sets next to each other for direct comparison.
+          <br><br>
+          <strong>History:</strong> Used to contrast different approaches or outcomes.
+          <br><br>
+          <strong>Usage:</strong> Ideal for showing differences or similarities.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/side-by-side-comparison" target="_blank">Fixed vs Growth Mindset</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 27: Abstract Tree -->
+    <div class="flip-card" data-search="abstract tree hierarchy grouping">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Abstract Tree</div>
+          <div class="card-subtitle">Hierarchical grouping</div>
+          <img class="chart-image" src="Images/abstract-tree.png" alt="Abstract Tree">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents hierarchies in an abstract, simplified form.
+          <br><br>
+          <strong>History:</strong> Adapted from natural tree structures.
+          <br><br>
+          <strong>Usage:</strong> Useful for depicting taxonomies and organizational charts.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/abstract-tree" target="_blank">Apple Tree Infographic</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 28: Mind Map -->
+    <div class="flip-card" data-search="mind map brainstorming connections">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Mind Map</div>
+          <div class="card-subtitle">Connecting ideas</div>
+          <img class="chart-image" src="Images/mind-map.png" alt="Mind Map">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Visualizes the network of ideas and their connections.
+          <br><br>
+          <strong>History:</strong> Evolved as a brainstorming tool.
+          <br><br>
+          <strong>Usage:</strong> Effective for mapping complex thought processes.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/mind-map" target="_blank">How To Be Productive</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 29: Decision Tree -->
+    <div class="flip-card" data-search="decision tree choices flow">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Decision Tree</div>
+          <div class="card-subtitle">Flow of decisions</div>
+          <img class="chart-image" src="Images/decision-tree.png" alt="Decision Tree">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Maps out decision processes in a branching format.
+          <br><br>
+          <strong>History:</strong> Developed to simplify complex choices.
+          <br><br>
+          <strong>Usage:</strong> Ideal for illustrating troubleshooting or planning.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/decision-tree" target="_blank">Should I Text Him?</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 30: Block Scheme / Flowchart -->
+    <div class="flip-card" data-search="flowchart algorithm process">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Block Scheme / Flowchart</div>
+          <div class="card-subtitle">Algorithmic process</div>
+          <img class="chart-image" src="Images/block-scheme-or-flowchart.png" alt="Flowchart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses distinct shapes to outline steps in a process.
+          <br><br>
+          <strong>History:</strong> A longstanding tool for visualizing algorithms.
+          <br><br>
+          <strong>Usage:</strong> Employed in strategy and decision-making diagrams.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/block-scheme-or-flowchart" target="_blank">Algorithm Flowchart Example</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 31: Pyramid -->
+    <div class="flip-card" data-search="pyramid hierarchy needs distribution">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Pyramid</div>
+          <div class="card-subtitle">Hierarchical structure</div>
+          <img class="chart-image" src="Images/pyramid.png" alt="Pyramid">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents hierarchical levels with diminishing size.
+          <br><br>
+          <strong>History:</strong> Inspired by models like the Maslow Pyramid.
+          <br><br>
+          <strong>Usage:</strong> Common in depicting social or nutritional hierarchies.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/pyramid" target="_blank">Healthy Eating Pyramid</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 32: Funnel -->
+    <div class="flip-card" data-search="funnel reverse pyramid conversion">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Funnel</div>
+          <div class="card-subtitle">Reverse pyramid</div>
+          <img class="chart-image" src="Images/funnel.png" alt="Funnel">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Inverts the pyramid to emphasize narrowing.
+          <br><br>
+          <strong>History:</strong> Used to illustrate selection and conversion processes.
+          <br><br>
+          <strong>Usage:</strong> Common in sales and recruitment visualizations.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/funnel" target="_blank">Sales Funnel Example</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 33: Spoke Wheel -->
+    <div class="flip-card" data-search="spoke wheel equal support">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Spoke Wheel</div>
+          <div class="card-subtitle">Equal radial support</div>
+          <img class="chart-image" src="Images/spoke-wheel.png" alt="Spoke Wheel">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> All spokes contribute equally to the center.
+          <br><br>
+          <strong>History:</strong> A simple visual to represent equal parts.
+          <br><br>
+          <strong>Usage:</strong> Ideal for visualizing non‑hierarchical distributions.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/spoke-wheel" target="_blank">9 Types of Intelligence</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 34: Cycle Wheel -->
+    <div class="flip-card" data-search="cycle wheel endless cycle">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Cycle Wheel</div>
+          <div class="card-subtitle">Endless cyclic process</div>
+          <img class="chart-image" src="Images/cycle-wheel.png" alt="Cycle Wheel">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Emphasizes an ongoing, never‑ending cycle.
+          <br><br>
+          <strong>History:</strong> Derived from circular data representations.
+          <br><br>
+          <strong>Usage:</strong> Used for cyclic trends like investor sentiment.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/cycle-wheel" target="_blank">Investor Sentiment Wheel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 35: Staircase -->
+    <div class="flip-card" data-search="staircase steps progression">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Staircase</div>
+          <div class="card-subtitle">Step‑by‑step progression</div>
+          <img class="chart-image" src="Images/staircase.png" alt="Staircase">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Illustrates incremental steps toward a goal.
+          <br><br>
+          <strong>History:</strong> A familiar metaphor for gradual achievement.
+          <br><br>
+          <strong>Usage:</strong> Useful for showing progress over discrete stages.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/staircase" target="_blank">Which Steps Have You Reached Today</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 36: Isotype -->
+    <div class="flip-card" data-search="isotype icons quantities">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Isotype</div>
+          <div class="card-subtitle">Icon‑based data representation</div>
+          <img class="chart-image" src="Images/isotype.png" alt="Isotype">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses repeated pictograms to represent quantities.
+          <br><br>
+          <strong>History:</strong> Developed by Otto Neurath as a visual language.
+          <br><br>
+          <strong>Usage:</strong> Common in media to display statistical data.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/isotype" target="_blank">NY Times Iraq Deaths</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 37: Subway Map -->
+    <div class="flip-card" data-search="subway map routes intersections">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Subway Map</div>
+          <div class="card-subtitle">Interconnected routes</div>
+          <img class="chart-image" src="Images/subway-map.png" alt="Subway Map">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Maps complex networks similar to urban transit.
+          <br><br>
+          <strong>History:</strong> A popular analogy for showing multiple intersections.
+          <br><br>
+          <strong>Usage:</strong> Effective for visualizing interconnected processes.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/subway-map" target="_blank">Entrepreneurial Thought Paths</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 38: Speedometer Chart -->
+    <div class="flip-card" data-search="speedometer chart measure intensity">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Speedometer Chart</div>
+          <div class="card-subtitle">Indicator of performance</div>
+          <img class="chart-image" src="Images/speedometer-chart.png" alt="Speedometer Chart">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Displays performance levels like a speed gauge.
+          <br><br>
+          <strong>History:</strong> Inspired by automotive instruments.
+          <br><br>
+          <strong>Usage:</strong> Used to compare metrics such as speed or efficiency.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/speedometer-chart" target="_blank">Train Speeds by Francesco Franchi</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 39: Gears -->
+    <div class="flip-card" data-search="gears leverage interconnected">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Gears</div>
+          <div class="card-subtitle">Interlocking mechanical parts</div>
+          <img class="chart-image" src="Images/gears.png" alt="Gears">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Symbolizes how small actions drive larger changes.
+          <br><br>
+          <strong>History:</strong> A classic metaphor from mechanical engineering.
+          <br><br>
+          <strong>Usage:</strong> Effective in demonstrating cause and effect.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/gears" target="_blank">Speed of Language Infographic</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 40: Puzzle -->
+    <div class="flip-card" data-search="puzzle irregular pieces fit together">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Puzzle</div>
+          <div class="card-subtitle">Irregular pieces forming a whole</div>
+          <img class="chart-image" src="Images/puzzle.png" alt="Puzzle">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Demonstrates how seemingly mismatched pieces can fit together.
+          <br><br>
+          <strong>History:</strong> A common analogy for collaborative efforts.
+          <br><br>
+          <strong>Usage:</strong> Used to illustrate complex interrelationships.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/puzzle" target="_blank">Anonymous Internet Usage Puzzle</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 41: Lever -->
+    <div class="flip-card" data-search="lever balance small force">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Lever</div>
+          <div class="card-subtitle">Small force, big impact</div>
+          <img class="chart-image" src="Images/lever.png" alt="Lever">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Illustrates how a minimal input can produce a significant effect.
+          <br><br>
+          <strong>History:</strong> Based on classical mechanics.
+          <br><br>
+          <strong>Usage:</strong> Used to visualize negotiation and influence.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/lever" target="_blank">Balance of Advantage Example</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 42: Scales -->
+    <div class="flip-card" data-search="scales balance comparison">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Scales</div>
+          <div class="card-subtitle">Balance for comparison</div>
+          <img class="chart-image" src="Images/scales.png" alt="Scales">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents balance and proportional comparison.
+          <br><br>
+          <strong>History:</strong> A longstanding symbol in justice and measurement.
+          <br><br>
+          <strong>Usage:</strong> Ideal for weighing pros and cons.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/scales" target="_blank">Justice and Accounting Balance</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 43: Chernoff Faces -->
+    <div class="flip-card" data-search="chernoff faces human expression data">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Chernoff Faces</div>
+          <div class="card-subtitle">Facial features represent data</div>
+          <img class="chart-image" src="Images/chernoff-faces.png" alt="Chernoff Faces">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Encodes different data variables in facial features.
+          <br><br>
+          <strong>History:</strong> Developed to exploit our innate ability to read faces.
+          <br><br>
+          <strong>Usage:</strong> Useful for intuitively representing complex data.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/chernoff-faces" target="_blank">NY Times Baseball Coaches</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 44: Head Profile -->
+    <div class="flip-card" data-search="head profile compartments thoughts">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Head Profile</div>
+          <div class="card-subtitle">Interior layout of the mind</div>
+          <img class="chart-image" src="Images/head-profile.png" alt="Head Profile">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Breaks down the mind into distinct compartments.
+          <br><br>
+          <strong>History:</strong> Inspired by the need to visualize complex thought processes.
+          <br><br>
+          <strong>Usage:</strong> Used for illustrating how ideas are compartmentalized.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/head-profile" target="_blank">What the Internet Thinks About</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 45: Genealogy Tree -->
+    <div class="flip-card" data-search="genealogy tree lineage family">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Genealogy Tree</div>
+          <div class="card-subtitle">Tracing lineage</div>
+          <img class="chart-image" src="Images/genealogy-tree.png" alt="Genealogy Tree">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Visualizes lineage and family relationships.
+          <br><br>
+          <strong>History:</strong> A natural metaphor for tracing ancestry.
+          <br><br>
+          <strong>Usage:</strong> Often used in infographics to depict succession.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/genealogy-tree" target="_blank">Genealogy of Ideas</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 46: Anatomy -->
+    <div class="flip-card" data-search="anatomy parts functions">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Anatomy</div>
+          <div class="card-subtitle">Breaking down components</div>
+          <img class="chart-image" src="Images/anatomy.png" alt="Anatomy">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Dissects a subject to reveal its inner workings.
+          <br><br>
+          <strong>History:</strong> Used to simplify complex structures.
+          <br><br>
+          <strong>Usage:</strong> Effective for explaining how something functions.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/anatomy" target="_blank">Anatomy of an Entrepreneur</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 47: Maze -->
+    <div class="flip-card" data-search="maze tangled paths strategy">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Maze</div>
+          <div class="card-subtitle">Complex, winding paths</div>
+          <img class="chart-image" src="Images/maze.png" alt="Maze">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents the complexity of finding a solution.
+          <br><br>
+          <strong>History:</strong> A common metaphor for intricate problem solving.
+          <br><br>
+          <strong>Usage:</strong> Used to illustrate tangled strategies and policies.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/maze" target="_blank">Entangled Ideas in Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 48: Map -->
+    <div class="flip-card" data-search="map geography legend">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Map</div>
+          <div class="card-subtitle">Spatial representation</div>
+          <img class="chart-image" src="Images/map.png" alt="Map">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents spatial layouts in a familiar way.
+          <br><br>
+          <strong>History:</strong> Maps have been used for centuries to depict territories.
+          <br><br>
+          <strong>Usage:</strong> Useful for detailed geographic or conceptual comparisons.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/map" target="_blank">Map Of The Internet</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 49: Iceberg -->
+    <div class="flip-card" data-search="iceberg visible hidden">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Iceberg</div>
+          <div class="card-subtitle">Tip vs. bulk</div>
+          <img class="chart-image" src="Images/iceberg.png" alt="Iceberg">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Shows that only a small part is visible while most is hidden.
+          <br><br>
+          <strong>History:</strong> A classic analogy for hidden complexities.
+          <br><br>
+          <strong>Usage:</strong> Commonly used to explain underlying factors.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/iceberg" target="_blank">SEO Strategies Iceberg</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 50: Mountain -->
+    <div class="flip-card" data-search="mountain challenge climb">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Mountain</div>
+          <div class="card-subtitle">A daunting challenge</div>
+          <img class="chart-image" src="Images/mountain.png" alt="Mountain">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Symbolizes a significant challenge to be overcome.
+          <br><br>
+          <strong>History:</strong> Mountains have long been metaphors for obstacles.
+          <br><br>
+          <strong>Usage:</strong> Ideal for representing arduous tasks.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/mountain" target="_blank">How To Never Give Up</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 51: Island -->
+    <div class="flip-card" data-search="island isolated">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Island</div>
+          <div class="card-subtitle">Isolated and self‑contained</div>
+          <img class="chart-image" src="Images/island.png" alt="Island">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents an entity that stands alone.
+          <br><br>
+          <strong>History:</strong> Islands are natural symbols of isolation.
+          <br><br>
+          <strong>Usage:</strong> Used to depict independent processes or communities.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/island" target="_blank">Sub-cultures Visualization</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 52: Sandwich -->
+    <div class="flip-card" data-search="sandwich layers interior">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Sandwich</div>
+          <div class="card-subtitle">Layered structure</div>
+          <img class="chart-image" src="Images/sandwich.png" alt="Sandwich">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Reveals internal layers by exposing the "filling."
+          <br><br>
+          <strong>History:</strong> Inspired by everyday sandwiches.
+          <br><br>
+          <strong>Usage:</strong> Useful for showing multi‑layered information.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/sandwich" target="_blank">White House Interior</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 53: Universe -->
+    <div class="flip-card" data-search="universe expansive">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Universe</div>
+          <div class="card-subtitle">Expansive, interconnected system</div>
+          <img class="chart-image" src="Images/universe.png" alt="Universe">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents vast, complex systems with interconnected parts.
+          <br><br>
+          <strong>History:</strong> Inspired by celestial models and galactic structures.
+          <br><br>
+          <strong>Usage:</strong> Used for comparing complex, expansive entities.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/universe" target="_blank">Startup Universe</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 54: Clock Face -->
+    <div class="flip-card" data-search="clock face time segments">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Clock Face</div>
+          <div class="card-subtitle">Time divided into segments</div>
+          <img class="chart-image" src="Images/clock-face.png" alt="Clock Face">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Divides time into familiar, discrete segments.
+          <br><br>
+          <strong>History:</strong> Clocks have long been used to structure time.
+          <br><br>
+          <strong>Usage:</strong> Ideal for illustrating daily routines or schedules.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/clock-face" target="_blank">Author Routines Infographic</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 55: Layers -->
+    <div class="flip-card" data-search="layers peel away">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Layers</div>
+          <div class="card-subtitle">Uncovering underlying structure</div>
+          <img class="chart-image" src="Images/layers.png" alt="Layers">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Shows how multiple layers contribute to a complete picture.
+          <br><br>
+          <strong>History:</strong> Derived from analyses that “peel away” complexity.
+          <br><br>
+          <strong>Usage:</strong> Effective for deconstructing multifaceted subjects.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/layers" target="_blank">Components of Water Budget</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 56: Roller Coaster -->
+    <div class="flip-card" data-search="roller coaster ups downs fluctuations">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Roller Coaster</div>
+          <div class="card-subtitle">Dramatic ups and downs</div>
+          <img class="chart-image" src="Images/roller-coaster.png" alt="Roller Coaster">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Illustrates rapid fluctuations between highs and lows.
+          <br><br>
+          <strong>History:</strong> A common metaphor for volatile journeys.
+          <br><br>
+          <strong>Usage:</strong> Used for visualizing emotional or financial ups and downs.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/roller-coaster" target="_blank">The Entrepreneur Roller Coaster</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 57: Book Shelf -->
+    <div class="flip-card" data-search="book shelf volume information reading">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Book Shelf</div>
+          <div class="card-subtitle">Volume of information</div>
+          <img class="chart-image" src="Images/book-shelf.png" alt="Book Shelf">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Uses the size and arrangement of books to represent data volume.
+          <br><br>
+          <strong>History:</strong> A familiar visual metaphor for knowledge.
+          <br><br>
+          <strong>Usage:</strong> Depicts reading volume or informational density.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/book-shelf" target="_blank">Top 10 Most Read Books</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 58: Root -->
+    <div class="flip-card" data-search="root foundation">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Root</div>
+          <div class="card-subtitle">Foundation that takes hold</div>
+          <img class="chart-image" src="Images/root.png" alt="Root">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents the underlying source or origin.
+          <br><br>
+          <strong>History:</strong> A classic metaphor for beginnings.
+          <br><br>
+          <strong>Usage:</strong> Effective for showing where problems or ideas originate.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/root" target="_blank">The Root of the Problem</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 59: Tree -->
+    <div class="flip-card" data-search="tree branching knowledge">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Tree</div>
+          <div class="card-subtitle">Branching structure</div>
+          <img class="chart-image" src="Images/tree.png" alt="Tree">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents the branching and spreading of ideas.
+          <br><br>
+          <strong>History:</strong> A natural metaphor for growth and evolution.
+          <br><br>
+          <strong>Usage:</strong> Commonly used for evolutionary diagrams.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/tree" target="_blank">Tree of Knowledge</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 60: Circulatory System -->
+    <div class="flip-card" data-search="circulatory system flow">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Circulatory System</div>
+          <div class="card-subtitle">Flow from center to periphery</div>
+          <img class="chart-image" src="Images/circulatory-system.png" alt="Circulatory System">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents movement and distribution from a central point.
+          <br><br>
+          <strong>History:</strong> Modeled after biological systems.
+          <br><br>
+          <strong>Usage:</strong> Used for visualizing supply chains and network flows.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/circulatory-system" target="_blank">Supply Chain Visualization</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 61: Life of a Building -->
+    <div class="flip-card" data-search="life of a building structure rooms">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Life of a Building</div>
+          <div class="card-subtitle">Activities in different spaces</div>
+          <img class="chart-image" src="Images/life-of-a-building.png" alt="Life of a Building">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Depicts how different areas of a building function.
+          <br><br>
+          <strong>History:</strong> A creative way to represent internal processes.
+          <br><br>
+          <strong>Usage:</strong> Used in recruitment or organizational infographics.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/life-of-a-building" target="_blank">How Recruiting Works</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 62: Life of a City -->
+    <div class="flip-card" data-search="life of a city urban grid movement">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Life of a City</div>
+          <div class="card-subtitle">Urban movement and structure</div>
+          <img class="chart-image" src="Images/life-of-a-city.png" alt="Life of a City">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Illustrates the dynamic structure of urban life.
+          <br><br>
+          <strong>History:</strong> Based on the organized yet unpredictable nature of cities.
+          <br><br>
+          <strong>Usage:</strong> Ideal for visualizing growth and movement in urban settings.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/life-of-a-city" target="_blank">How Startup Funding Works</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 63: Marathon -->
+    <div class="flip-card" data-search="marathon endurance timeline">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Marathon</div>
+          <div class="card-subtitle">Long‑term endurance</div>
+          <img class="chart-image" src="Images/marathon.png" alt="Marathon">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents a prolonged, continuous journey.
+          <br><br>
+          <strong>History:</strong> A metaphor drawn from athletic endurance events.
+          <br><br>
+          <strong>Usage:</strong> Suitable for processes that require sustained effort.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/marathon" target="_blank">Startup Marathon</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 64: Evolution -->
+    <div class="flip-card" data-search="evolution gradual change transformation">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Evolution</div>
+          <div class="card-subtitle">Transformative progression</div>
+          <img class="chart-image" src="Images/evolution.png" alt="Evolution">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Shows gradual transformation over time.
+          <br><br>
+          <strong>History:</strong> Inspired by biological evolution and technological change.
+          <br><br>
+          <strong>Usage:</strong> Ideal for illustrating the progression of products or ideas.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/evolution" target="_blank">Mobile Phone Size Evolution</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 65: Food Chain -->
+    <div class="flip-card" data-search="food chain predator prey competition">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Food Chain</div>
+          <div class="card-subtitle">Predator and prey dynamics</div>
+          <img class="chart-image" src="Images/food-chain.png" alt="Food Chain">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Illustrates the hierarchical nature of consumption.
+          <br><br>
+          <strong>History:</strong> A natural analogy for competitive interactions.
+          <br><br>
+          <strong>Usage:</strong> Used to depict market dominance or competitive structures.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/food-chain" target="_blank">Startup Ecosystem: Predators vs Prey</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 66: Concentration -->
+    <div class="flip-card" data-search="concentration clustering disparate">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Concentration</div>
+          <div class="card-subtitle">Bringing elements together</div>
+          <img class="chart-image" src="Images/concentration.png" alt="Concentration">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Aggregates disparate elements into one focal point.
+          <br><br>
+          <strong>History:</strong> Utilized when comparing items not usually seen together.
+          <br><br>
+          <strong>Usage:</strong> Effective for visualizing concentrated data.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/concentration" target="_blank">World’s Tallest Buildings</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 67: Experiment -->
+    <div class="flip-card" data-search="experiment synthetic research methodology">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Experiment</div>
+          <div class="card-subtitle">Unusual combinations</div>
+          <img class="chart-image" src="Images/experiment.png" alt="Experiment">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Demonstrates synthetic methods and unexpected connections.
+          <br><br>
+          <strong>History:</strong> Inspired by laboratory experiments.
+          <br><br>
+          <strong>Usage:</strong> Used to illustrate research methodologies.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/experiment" target="_blank">Can Entrepreneurship Be Learned?</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 68: Factory -->
+    <div class="flip-card" data-search="factory industrial process">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Factory</div>
+          <div class="card-subtitle">Mechanized production</div>
+          <img class="chart-image" src="Images/factory.png" alt="Factory">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents automated, man-made processes.
+          <br><br>
+          <strong>History:</strong> Inspired by industrial assembly lines.
+          <br><br>
+          <strong>Usage:</strong> Used when natural analogies are not sufficient.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/factory" target="_blank">Tea Making Process in a Factory</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 69: Tool Set -->
+    <div class="flip-card" data-search="tool set essential tools">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Tool Set</div>
+          <div class="card-subtitle">Collection of necessary tools</div>
+          <img class="chart-image" src="Images/tool-set.png" alt="Tool Set">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Displays the instruments one uses for a task.
+          <br><br>
+          <strong>History:</strong> Reflects the visual language of professions.
+          <br><br>
+          <strong>Usage:</strong> Used to depict work processes and tool arrangements.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/tool-set" target="_blank">Formal Dining Setting</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 70: Conveyor Belt -->
+    <div class="flip-card" data-search="conveyor belt automated sequence">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Conveyor Belt</div>
+          <div class="card-subtitle">Automated process flow</div>
+          <img class="chart-image" src="Images/conveyor-belt.png" alt="Conveyor Belt">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents a continuous, automated process.
+          <br><br>
+          <strong>History:</strong> Modeled after industrial production lines.
+          <br><br>
+          <strong>Usage:</strong> Common in visualizing systematic processes.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/conveyor-belt" target="_blank">Will I Succeed In My Startup?</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 71: Road -->
+    <div class="flip-card" data-search="road journey steps">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Road</div>
+          <div class="card-subtitle">Pathway with steps</div>
+          <img class="chart-image" src="Images/road.png" alt="Road">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Symbolizes a sequential journey or process.
+          <br><br>
+          <strong>History:</strong> Derived from everyday travel experiences.
+          <br><br>
+          <strong>Usage:</strong> Ideal for illustrating processes that unfold over time.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/road" target="_blank">Startup Marathon Roadmap</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 72: Machine -->
+    <div class="flip-card" data-search="machine complex system">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-title">Machine</div>
+          <div class="card-subtitle">Complex mechanical system</div>
+          <img class="chart-image" src="Images/machine.png" alt="Machine">
+          <div class="flip-instruction">Click to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <strong>Meaning:</strong> Represents intricate systems with multiple interacting parts.
+          <br><br>
+          <strong>History:</strong> Inspired by industrial machinery.
+          <br><br>
+          <strong>Usage:</strong> Used to visualize complex, man‑made constructs.
+          <br><br>
+          <strong>Example:</strong> <a href="https://www.example.com/machine" target="_blank">Der Mensch als Industriepalast</a>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End of card-container -->
+
+  <!-- Footer -->
+  <footer>
+    Information Design by <a href="http://www.dhvanijadav.com" target="_blank">Dhvani Jadav &  <a href="http://www.sankethajare.com" target="_blank">Sanket Hajare</a>
+  </footer>
+
+  <!-- JavaScript for card flipping and search functionality -->
+  <script>
+    // Allow only one card to be flipped open at a time
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+      card.addEventListener('click', function() {
+        if (!this.classList.contains('flipped')) {
+          flipCards.forEach(c => {
+            if (c !== this) c.classList.remove('flipped');
+          });
+          this.classList.add('flipped');
+        } else {
+          this.classList.remove('flipped');
+        }
+      });
+    });
+
+    // Search functionality: live filter on input
+    const searchInput = document.getElementById('search-input');
+    const searchClear = document.getElementById('search-clear');
+
+    function updateSearchIcon() {
+      if (searchInput.value.trim() !== "") {
+        searchClear.textContent = "✖";
+      } else {
+        searchClear.textContent = "🔍";
+      }
+    }
+
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      updateSearchIcon();
+      flipCards.forEach(card => {
+        const text = card.getAttribute('data-search');
+        card.style.display = text.indexOf(query) !== -1 ? "block" : "none";
+      });
+    });
+
+    searchClear.addEventListener('click', function() {
+      if (searchInput.value.trim() !== "") {
+        searchInput.value = "";
+        updateSearchIcon();
+        flipCards.forEach(card => {
+          card.style.display = "block";
+        });
+      }
+    });
+  </script>
+</body>
+</html>
