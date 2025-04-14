@@ -1,18 +1,20 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How To Think Visually Using Visual Analogies</title>
+  <title>Visual Analogies</title>
   <!-- Load Poppins from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
     body {
-      margin: 0;
-      padding: 20px;
+      margin: 20;
+      padding: 80px;
       font-family: 'Poppins', sans-serif;
-      background-color: #f8e6f1;
+      background-color: #ffffff;
       color: #222; /* Dark grey close to black */
     }
     /* Header styling: title aligned left; search on top right */
@@ -20,7 +22,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 60px;
     }
     .header-left {
       text-align: left;
@@ -35,12 +37,13 @@
       margin: 5px 0 0 0;
       font-size: 18px;
       font-weight: 400;
-      color: #ad1457;
+      color: #424041;
     }
     /* Search styling */
     .search-wrapper {
-      position: relative;
-      width: 200px;
+      position: right;
+      width: 100px;
+      margin-right: 60px;
     }
     .search-wrapper input {
       width: 100%;
@@ -50,10 +53,10 @@
       border-radius: 4px;
       outline: none;
     }
-    .search-wrapper button {
-      position: absolute;
-      right: 4px;
-      top: 50%;
+   .search-wrapper button {
+      position: fixed;
+      right: 80px;
+      top: 15%;
       transform: translateY(-50%);
       border: none;
       background: none;
@@ -72,7 +75,7 @@
     /* Each card uses the full width of its grid cell and keeps a portrait (3:4) ratio */
     .flip-card {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 3 / 4.5;
       perspective: 1000px;
       cursor: pointer;
       position: relative;
@@ -92,14 +95,14 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      border: 2px solid #ff66b2;
+      border: .5px solid #ff66b2;
       border-radius: 10px;
       background-color: #ffe6f2;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* More subtle shadow */
       backface-visibility: hidden;
       padding: 8px;
       box-sizing: border-box;
-      overflow-y: auto;
+      overflow-y: false;
       text-align: left;
     }
     .flip-card-back {
@@ -111,23 +114,18 @@
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 4px;
-      color: #b3007a;
+      color: #351120;
     }
     .card-subtitle {
       font-size: 14px;
       margin-bottom: 6px;
-      color: #ad1457;
+      color: #351120;
     }
     .chart-image {
       width: 100%;
       height: auto;
       margin-bottom: 6px;
       border-radius: 5px;
-    }
-    .flip-instruction {
-      font-size: 10px;
-      color: #555;
-      margin-top: 6px;
     }
     /* Footer styling */
     footer {
@@ -146,12 +144,12 @@
   <!-- Header with title (left) and search (right) -->
   <header>
     <div class="header-left">
-      <h1>How To Think Visually Using Visual Analogies</h1>
-      <h2>by Anna Vital</h2>
+      <h1>Visual Analogies</h1>
+      <h2>Analogies, Allegories, Charts & Diagrams to think data visually</h2>
     </div>
     <div class="header-right">
       <div class="search-wrapper">
-        <input type="text" id="search-input" placeholder="🔍" />
+        <input type="text" id="search-input" placeholder="Search" />
         <button id="search-clear" type="button">🔍</button>
       </div>
     </div>
@@ -165,8 +163,7 @@
         <div class="flip-card-front">
           <div class="card-title">Pie Chart</div>
           <div class="card-subtitle">The most popular and criticized</div>
-          <img class="chart-image" src="Images/Pie Chart.png" alt="Pie Chart">
-          
+          <img class="chart-image" src="Images/pie-chart.png" alt="Pie Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents parts of a whole in a circular form.
@@ -186,8 +183,7 @@
         <div class="flip-card-front">
           <div class="card-title">Venn Diagram</div>
           <div class="card-subtitle">Shows overlapping relationships</div>
-          <img class="chart-image" src="Images/Venn Diagram.png" alt="Venn Diagram">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/venn-diagram.png" alt="Venn Diagram">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Illustrates the commonalities between groups.
@@ -207,8 +203,7 @@
         <div class="flip-card-front">
           <div class="card-title">Concentric Diagram</div>
           <div class="card-subtitle">Layers radiating from the center</div>
-          <img class="chart-image" src="Images/Concentric Diagram.png" alt="Concentric Diagram">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/concentric-diagram.png" alt="Concentric Diagram">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Depicts a hierarchy with decreasing importance from the center.
@@ -228,8 +223,7 @@
         <div class="flip-card-front">
           <div class="card-title">Circular Chart</div>
           <div class="card-subtitle">Comparing lengths on a circle</div>
-          <img class="chart-image" src="Images/Circular Chart.png" alt="Circular Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/circular-chart.png" alt="Circular Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses a circle to represent 100% as a whole.
@@ -249,8 +243,7 @@
         <div class="flip-card-front">
           <div class="card-title">Bubble Chart</div>
           <div class="card-subtitle">Rough comparison of quantities</div>
-          <img class="chart-image" src="Images/Bubble Chart.png" alt="Bubble Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/bubble-chart.png" alt="Bubble Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses bubbles to depict relative data sizes.
@@ -270,8 +263,7 @@
         <div class="flip-card-front">
           <div class="card-title">Bubble Race Chart</div>
           <div class="card-subtitle">Bubbles with positional meaning</div>
-          <img class="chart-image" src="Images/Bubble Race Chart.png" alt="Bubble Race Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/bubble-race-chart.png" alt="Bubble Race Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Assigns extra meaning (like education level) to bubble positions.
@@ -291,8 +283,7 @@
         <div class="flip-card-front">
           <div class="card-title">Line Chart</div>
           <div class="card-subtitle">Series of connected points</div>
-          <img class="chart-image" src="Images/Line Chart.png" alt="Line Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/line-chart.png" alt="Line Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Shows the progression of data over time.
@@ -312,8 +303,7 @@
         <div class="flip-card-front">
           <div class="card-title">Area Chart</div>
           <div class="card-subtitle">Filled area between lines</div>
-          <img class="chart-image" src="Images/Area Chart.png" alt="Area Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/area-chart.png" alt="Area Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Highlights the volume under a trend line.
@@ -333,8 +323,7 @@
         <div class="flip-card-front">
           <div class="card-title">Scatter Plot</div>
           <div class="card-subtitle">Clusters and outliers</div>
-          <img class="chart-image" src="Images/Scatter Plot.png" alt="Scatter Plot">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/scatter-plot.png" alt="Scatter Plot">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Displays data as individual points to reveal clusters.
@@ -354,8 +343,7 @@
         <div class="flip-card-front">
           <div class="card-title">Sunburst Chart</div>
           <div class="card-subtitle">Hierarchical multi-level pie chart</div>
-          <img class="chart-image" src="Images/Sunburst Chart.png" alt="Sunburst Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/sunburst-chart.png" alt="Sunburst Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Conveys hierarchical data through concentric rings.
@@ -375,8 +363,7 @@
         <div class="flip-card-front">
           <div class="card-title">Fan Chart</div>
           <div class="card-subtitle">Expanding like a fan</div>
-          <img class="chart-image" src="Images/Fan Chart.png" alt="Fan Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/fan-chart.png" alt="Fan Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Displays expansion from a central point.
@@ -396,8 +383,7 @@
         <div class="flip-card-front">
           <div class="card-title">Windrose Chart</div>
           <div class="card-subtitle">Directional data visualization</div>
-          <img class="chart-image" src="Images/Windrose Chart.png" alt="Windrose Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/windrose-chart.png" alt="Windrose Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Visualizes data by direction, similar to wind patterns.
@@ -417,8 +403,7 @@
         <div class="flip-card-front">
           <div class="card-title">Bar Chart</div>
           <div class="card-subtitle">Data represented with bars</div>
-          <img class="chart-image" src="Images/Bar Chart.png" alt="Bar Chart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/bar-chart.png" alt="Bar Chart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses bars to quantitatively compare values.
@@ -438,8 +423,7 @@
         <div class="flip-card-front">
           <div class="card-title">Tape Diagram</div>
           <div class="card-subtitle">Visual representation of ratios</div>
-          <img class="chart-image" src="Images/Tape Diagram.png" alt="Tape Diagram">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/tape-diagram.png" alt="Tape Diagram">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses tape-like segments to illustrate numerical ratios.
@@ -460,7 +444,6 @@
           <div class="card-title">Gantt Chart</div>
           <div class="card-subtitle">Timeline of tasks</div>
           <img class="chart-image" src="Images/gantt-chart.png" alt="Gantt Chart">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents tasks and timelines in a structured format.
@@ -481,7 +464,6 @@
           <div class="card-title">Tree Map</div>
           <div class="card-subtitle">Nested rectangles for hierarchy</div>
           <img class="chart-image" src="Images/tree-map.png" alt="Tree Map">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses nested rectangles to show proportional hierarchies.
@@ -502,7 +484,6 @@
           <div class="card-title">Grid</div>
           <div class="card-subtitle">Uniform, non-hierarchical layout</div>
           <img class="chart-image" src="Images/grid.png" alt="Grid">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Organizes items in equal cells without hierarchy.
@@ -523,7 +504,6 @@
           <div class="card-title">Periodic Table</div>
           <div class="card-subtitle">Structured grid with meaningful positions</div>
           <img class="chart-image" src="Images/periodic-table.png" alt="Periodic Table">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Arranges items in a grid where each position carries significance.
@@ -544,7 +524,6 @@
           <div class="card-title">Arc Diagram</div>
           <div class="card-subtitle">Curved connections between nodes</div>
           <img class="chart-image" src="Images/arc-diagram.png" alt="Arc Diagram">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses arcs to link related data points.
@@ -565,7 +544,6 @@
           <div class="card-title">Sankey Chart</div>
           <div class="card-subtitle">Flow diagram with variable thickness</div>
           <img class="chart-image" src="Images/sankey-chart.png" alt="Sankey Chart">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Visualizes flows with line thickness representing magnitude.
@@ -586,7 +564,6 @@
           <div class="card-title">Chord Chart</div>
           <div class="card-subtitle">Circular interconnections</div>
           <img class="chart-image" src="Images/chord-chart.png" alt="Chord Chart">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses chords to depict the strength of interactions.
@@ -607,7 +584,6 @@
           <div class="card-title">Radar Chart</div>
           <div class="card-subtitle">Multi-axis data comparison</div>
           <img class="chart-image" src="Images/radar-chart.png" alt="Radar Chart">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Compares multiple variables on radial axes.
@@ -628,7 +604,6 @@
           <div class="card-title">Polar Grid</div>
           <div class="card-subtitle">Extended radar with extra spokes</div>
           <img class="chart-image" src="Images/polar-grid.png" alt="Polar Grid">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Allows for more axes than a standard radar chart.
@@ -649,7 +624,6 @@
           <div class="card-title">Spiral Graph</div>
           <div class="card-subtitle">Cyclic time sequence</div>
           <img class="chart-image" src="Images/spiral-graph.png" alt="Spiral Graph">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents time as a spiral to emphasize cycles.
@@ -670,7 +644,6 @@
           <div class="card-title">Timeline</div>
           <div class="card-subtitle">Sequential events</div>
           <img class="chart-image" src="Images/timeline.png" alt="Timeline">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Arranges events in chronological order.
@@ -690,8 +663,7 @@
         <div class="flip-card-front">
           <div class="card-title">Side-by-Side Comparison</div>
           <div class="card-subtitle">Parallel data sets</div>
-          <img class="chart-image" src="Images/side-by-side-comparison.png" alt="Side-by-Side Comparison">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/side-by-side.png" alt="Side-by-Side Comparison">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Places two data sets next to each other for direct comparison.
@@ -712,7 +684,6 @@
           <div class="card-title">Abstract Tree</div>
           <div class="card-subtitle">Hierarchical grouping</div>
           <img class="chart-image" src="Images/abstract-tree.png" alt="Abstract Tree">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents hierarchies in an abstract, simplified form.
@@ -733,7 +704,6 @@
           <div class="card-title">Mind Map</div>
           <div class="card-subtitle">Connecting ideas</div>
           <img class="chart-image" src="Images/mind-map.png" alt="Mind Map">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Visualizes the network of ideas and their connections.
@@ -754,7 +724,6 @@
           <div class="card-title">Decision Tree</div>
           <div class="card-subtitle">Flow of decisions</div>
           <img class="chart-image" src="Images/decision-tree.png" alt="Decision Tree">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Maps out decision processes in a branching format.
@@ -774,8 +743,7 @@
         <div class="flip-card-front">
           <div class="card-title">Block Scheme / Flowchart</div>
           <div class="card-subtitle">Algorithmic process</div>
-          <img class="chart-image" src="Images/block-scheme-or-flowchart.png" alt="Flowchart">
-          <div class="flip-instruction">Click to flip</div>
+          <img class="chart-image" src="Images/block-scheme.png" alt="Flowchart">
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses distinct shapes to outline steps in a process.
@@ -796,7 +764,6 @@
           <div class="card-title">Pyramid</div>
           <div class="card-subtitle">Hierarchical structure</div>
           <img class="chart-image" src="Images/pyramid.png" alt="Pyramid">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents hierarchical levels with diminishing size.
@@ -817,7 +784,6 @@
           <div class="card-title">Funnel</div>
           <div class="card-subtitle">Reverse pyramid</div>
           <img class="chart-image" src="Images/funnel.png" alt="Funnel">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Inverts the pyramid to emphasize narrowing.
@@ -838,7 +804,6 @@
           <div class="card-title">Spoke Wheel</div>
           <div class="card-subtitle">Equal radial support</div>
           <img class="chart-image" src="Images/spoke-wheel.png" alt="Spoke Wheel">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> All spokes contribute equally to the center.
@@ -859,7 +824,6 @@
           <div class="card-title">Cycle Wheel</div>
           <div class="card-subtitle">Endless cyclic process</div>
           <img class="chart-image" src="Images/cycle-wheel.png" alt="Cycle Wheel">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Emphasizes an ongoing, never‑ending cycle.
@@ -880,7 +844,6 @@
           <div class="card-title">Staircase</div>
           <div class="card-subtitle">Step‑by‑step progression</div>
           <img class="chart-image" src="Images/staircase.png" alt="Staircase">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Illustrates incremental steps toward a goal.
@@ -901,7 +864,6 @@
           <div class="card-title">Isotype</div>
           <div class="card-subtitle">Icon‑based data representation</div>
           <img class="chart-image" src="Images/isotype.png" alt="Isotype">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses repeated pictograms to represent quantities.
@@ -922,7 +884,6 @@
           <div class="card-title">Subway Map</div>
           <div class="card-subtitle">Interconnected routes</div>
           <img class="chart-image" src="Images/subway-map.png" alt="Subway Map">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Maps complex networks similar to urban transit.
@@ -943,7 +904,6 @@
           <div class="card-title">Speedometer Chart</div>
           <div class="card-subtitle">Indicator of performance</div>
           <img class="chart-image" src="Images/speedometer-chart.png" alt="Speedometer Chart">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Displays performance levels like a speed gauge.
@@ -964,7 +924,6 @@
           <div class="card-title">Gears</div>
           <div class="card-subtitle">Interlocking mechanical parts</div>
           <img class="chart-image" src="Images/gears.png" alt="Gears">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Symbolizes how small actions drive larger changes.
@@ -985,7 +944,6 @@
           <div class="card-title">Puzzle</div>
           <div class="card-subtitle">Irregular pieces forming a whole</div>
           <img class="chart-image" src="Images/puzzle.png" alt="Puzzle">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Demonstrates how seemingly mismatched pieces can fit together.
@@ -1006,7 +964,6 @@
           <div class="card-title">Lever</div>
           <div class="card-subtitle">Small force, big impact</div>
           <img class="chart-image" src="Images/lever.png" alt="Lever">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Illustrates how a minimal input can produce a significant effect.
@@ -1027,7 +984,6 @@
           <div class="card-title">Scales</div>
           <div class="card-subtitle">Balance for comparison</div>
           <img class="chart-image" src="Images/scales.png" alt="Scales">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents balance and proportional comparison.
@@ -1040,15 +996,14 @@
         </div>
       </div>
     </div>
-
-    <!-- Card 43: Chernoff Faces -->
+ <!--
+    Card 43: Chernoff Faces
     <div class="flip-card" data-search="chernoff faces human expression data">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Chernoff Faces</div>
           <div class="card-subtitle">Facial features represent data</div>
           <img class="chart-image" src="Images/chernoff-faces.png" alt="Chernoff Faces">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Encodes different data variables in facial features.
@@ -1062,14 +1017,13 @@
       </div>
     </div>
 
-    <!-- Card 44: Head Profile -->
+   Card 44: Head Profile 
     <div class="flip-card" data-search="head profile compartments thoughts">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Head Profile</div>
           <div class="card-subtitle">Interior layout of the mind</div>
           <img class="chart-image" src="Images/head-profile.png" alt="Head Profile">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Breaks down the mind into distinct compartments.
@@ -1083,14 +1037,13 @@
       </div>
     </div>
 
-    <!-- Card 45: Genealogy Tree -->
+    <!-- Card 45: Genealogy Tree 
     <div class="flip-card" data-search="genealogy tree lineage family">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Genealogy Tree</div>
           <div class="card-subtitle">Tracing lineage</div>
           <img class="chart-image" src="Images/genealogy-tree.png" alt="Genealogy Tree">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Visualizes lineage and family relationships.
@@ -1104,14 +1057,13 @@
       </div>
     </div>
 
-    <!-- Card 46: Anatomy -->
+    <!-- Card 46: Anatomy 
     <div class="flip-card" data-search="anatomy parts functions">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Anatomy</div>
           <div class="card-subtitle">Breaking down components</div>
           <img class="chart-image" src="Images/anatomy.png" alt="Anatomy">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Dissects a subject to reveal its inner workings.
@@ -1125,14 +1077,13 @@
       </div>
     </div>
 
-    <!-- Card 47: Maze -->
+   Card 47: Maze 
     <div class="flip-card" data-search="maze tangled paths strategy">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Maze</div>
           <div class="card-subtitle">Complex, winding paths</div>
           <img class="chart-image" src="Images/maze.png" alt="Maze">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents the complexity of finding a solution.
@@ -1146,14 +1097,13 @@
       </div>
     </div>
 
-    <!-- Card 48: Map -->
+    Card 48: Map 
     <div class="flip-card" data-search="map geography legend">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Map</div>
           <div class="card-subtitle">Spatial representation</div>
           <img class="chart-image" src="Images/map.png" alt="Map">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents spatial layouts in a familiar way.
@@ -1167,14 +1117,13 @@
       </div>
     </div>
 
-    <!-- Card 49: Iceberg -->
+    Card 49: Iceberg
     <div class="flip-card" data-search="iceberg visible hidden">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Iceberg</div>
           <div class="card-subtitle">Tip vs. bulk</div>
           <img class="chart-image" src="Images/iceberg.png" alt="Iceberg">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Shows that only a small part is visible while most is hidden.
@@ -1188,14 +1137,13 @@
       </div>
     </div>
 
-    <!-- Card 50: Mountain -->
+     Card 50: Mountain 
     <div class="flip-card" data-search="mountain challenge climb">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Mountain</div>
           <div class="card-subtitle">A daunting challenge</div>
           <img class="chart-image" src="Images/mountain.png" alt="Mountain">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Symbolizes a significant challenge to be overcome.
@@ -1209,14 +1157,13 @@
       </div>
     </div>
 
-    <!-- Card 51: Island -->
+    Card 51: Island 
     <div class="flip-card" data-search="island isolated">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Island</div>
           <div class="card-subtitle">Isolated and self‑contained</div>
           <img class="chart-image" src="Images/island.png" alt="Island">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents an entity that stands alone.
@@ -1230,14 +1177,13 @@
       </div>
     </div>
 
-    <!-- Card 52: Sandwich -->
+     Card 52: Sandwich 
     <div class="flip-card" data-search="sandwich layers interior">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Sandwich</div>
           <div class="card-subtitle">Layered structure</div>
           <img class="chart-image" src="Images/sandwich.png" alt="Sandwich">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Reveals internal layers by exposing the "filling."
@@ -1251,14 +1197,13 @@
       </div>
     </div>
 
-    <!-- Card 53: Universe -->
+   Card 53: Universe 
     <div class="flip-card" data-search="universe expansive">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Universe</div>
           <div class="card-subtitle">Expansive, interconnected system</div>
           <img class="chart-image" src="Images/universe.png" alt="Universe">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents vast, complex systems with interconnected parts.
@@ -1272,14 +1217,13 @@
       </div>
     </div>
 
-    <!-- Card 54: Clock Face -->
+    <!-- Card 54: Clock Face 
     <div class="flip-card" data-search="clock face time segments">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Clock Face</div>
           <div class="card-subtitle">Time divided into segments</div>
           <img class="chart-image" src="Images/clock-face.png" alt="Clock Face">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Divides time into familiar, discrete segments.
@@ -1293,14 +1237,13 @@
       </div>
     </div>
 
-    <!-- Card 55: Layers -->
+    <!-- Card 55: Layers 
     <div class="flip-card" data-search="layers peel away">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Layers</div>
           <div class="card-subtitle">Uncovering underlying structure</div>
           <img class="chart-image" src="Images/layers.png" alt="Layers">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Shows how multiple layers contribute to a complete picture.
@@ -1314,14 +1257,13 @@
       </div>
     </div>
 
-    <!-- Card 56: Roller Coaster -->
+    <!-- Card 56: Roller Coaster 
     <div class="flip-card" data-search="roller coaster ups downs fluctuations">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Roller Coaster</div>
           <div class="card-subtitle">Dramatic ups and downs</div>
           <img class="chart-image" src="Images/roller-coaster.png" alt="Roller Coaster">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Illustrates rapid fluctuations between highs and lows.
@@ -1335,14 +1277,13 @@
       </div>
     </div>
 
-    <!-- Card 57: Book Shelf -->
+    <!-- Card 57: Book Shelf 
     <div class="flip-card" data-search="book shelf volume information reading">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Book Shelf</div>
           <div class="card-subtitle">Volume of information</div>
           <img class="chart-image" src="Images/book-shelf.png" alt="Book Shelf">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Uses the size and arrangement of books to represent data volume.
@@ -1356,14 +1297,13 @@
       </div>
     </div>
 
-    <!-- Card 58: Root -->
+    <!-- Card 58: Root
     <div class="flip-card" data-search="root foundation">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Root</div>
           <div class="card-subtitle">Foundation that takes hold</div>
           <img class="chart-image" src="Images/root.png" alt="Root">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents the underlying source or origin.
@@ -1377,14 +1317,13 @@
       </div>
     </div>
 
-    <!-- Card 59: Tree -->
+    <!-- Card 59: Tree 
     <div class="flip-card" data-search="tree branching knowledge">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Tree</div>
           <div class="card-subtitle">Branching structure</div>
           <img class="chart-image" src="Images/tree.png" alt="Tree">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents the branching and spreading of ideas.
@@ -1398,14 +1337,13 @@
       </div>
     </div>
 
-    <!-- Card 60: Circulatory System -->
+    <!-- Card 60: Circulatory System 
     <div class="flip-card" data-search="circulatory system flow">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Circulatory System</div>
           <div class="card-subtitle">Flow from center to periphery</div>
           <img class="chart-image" src="Images/circulatory-system.png" alt="Circulatory System">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents movement and distribution from a central point.
@@ -1419,14 +1357,13 @@
       </div>
     </div>
 
-    <!-- Card 61: Life of a Building -->
+    <!-- Card 61: Life of a Building 
     <div class="flip-card" data-search="life of a building structure rooms">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Life of a Building</div>
           <div class="card-subtitle">Activities in different spaces</div>
           <img class="chart-image" src="Images/life-of-a-building.png" alt="Life of a Building">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Depicts how different areas of a building function.
@@ -1440,14 +1377,13 @@
       </div>
     </div>
 
-    <!-- Card 62: Life of a City -->
+    <!-- Card 62: Life of a City 
     <div class="flip-card" data-search="life of a city urban grid movement">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Life of a City</div>
           <div class="card-subtitle">Urban movement and structure</div>
           <img class="chart-image" src="Images/life-of-a-city.png" alt="Life of a City">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Illustrates the dynamic structure of urban life.
@@ -1461,14 +1397,13 @@
       </div>
     </div>
 
-    <!-- Card 63: Marathon -->
+    <!-- Card 63: Marathon 
     <div class="flip-card" data-search="marathon endurance timeline">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Marathon</div>
           <div class="card-subtitle">Long‑term endurance</div>
           <img class="chart-image" src="Images/marathon.png" alt="Marathon">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents a prolonged, continuous journey.
@@ -1482,14 +1417,13 @@
       </div>
     </div>
 
-    <!-- Card 64: Evolution -->
+    <!-- Card 64: Evolution 
     <div class="flip-card" data-search="evolution gradual change transformation">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Evolution</div>
           <div class="card-subtitle">Transformative progression</div>
           <img class="chart-image" src="Images/evolution.png" alt="Evolution">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Shows gradual transformation over time.
@@ -1503,14 +1437,13 @@
       </div>
     </div>
 
-    <!-- Card 65: Food Chain -->
+    <!-- Card 65: Food Chain 
     <div class="flip-card" data-search="food chain predator prey competition">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Food Chain</div>
           <div class="card-subtitle">Predator and prey dynamics</div>
           <img class="chart-image" src="Images/food-chain.png" alt="Food Chain">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Illustrates the hierarchical nature of consumption.
@@ -1524,14 +1457,13 @@
       </div>
     </div>
 
-    <!-- Card 66: Concentration -->
+    <!-- Card 66: Concentration 
     <div class="flip-card" data-search="concentration clustering disparate">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Concentration</div>
           <div class="card-subtitle">Bringing elements together</div>
           <img class="chart-image" src="Images/concentration.png" alt="Concentration">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Aggregates disparate elements into one focal point.
@@ -1545,14 +1477,13 @@
       </div>
     </div>
 
-    <!-- Card 67: Experiment -->
+    <!-- Card 67: Experiment 
     <div class="flip-card" data-search="experiment synthetic research methodology">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Experiment</div>
           <div class="card-subtitle">Unusual combinations</div>
           <img class="chart-image" src="Images/experiment.png" alt="Experiment">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Demonstrates synthetic methods and unexpected connections.
@@ -1566,14 +1497,13 @@
       </div>
     </div>
 
-    <!-- Card 68: Factory -->
+    <!-- Card 68: Factory 
     <div class="flip-card" data-search="factory industrial process">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Factory</div>
           <div class="card-subtitle">Mechanized production</div>
           <img class="chart-image" src="Images/factory.png" alt="Factory">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents automated, man-made processes.
@@ -1587,14 +1517,13 @@
       </div>
     </div>
 
-    <!-- Card 69: Tool Set -->
+    <!-- Card 69: Tool Set 
     <div class="flip-card" data-search="tool set essential tools">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Tool Set</div>
           <div class="card-subtitle">Collection of necessary tools</div>
           <img class="chart-image" src="Images/tool-set.png" alt="Tool Set">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Displays the instruments one uses for a task.
@@ -1608,14 +1537,13 @@
       </div>
     </div>
 
-    <!-- Card 70: Conveyor Belt -->
+   Card 70: Conveyor Belt 
     <div class="flip-card" data-search="conveyor belt automated sequence">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Conveyor Belt</div>
           <div class="card-subtitle">Automated process flow</div>
           <img class="chart-image" src="Images/conveyor-belt.png" alt="Conveyor Belt">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents a continuous, automated process.
@@ -1629,14 +1557,13 @@
       </div>
     </div>
 
-    <!-- Card 71: Road -->
+    Card 71: Road 
     <div class="flip-card" data-search="road journey steps">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Road</div>
           <div class="card-subtitle">Pathway with steps</div>
           <img class="chart-image" src="Images/road.png" alt="Road">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Symbolizes a sequential journey or process.
@@ -1650,14 +1577,13 @@
       </div>
     </div>
 
-    <!-- Card 72: Machine -->
+    Card 72: Machine 
     <div class="flip-card" data-search="machine complex system">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-title">Machine</div>
           <div class="card-subtitle">Complex mechanical system</div>
           <img class="chart-image" src="Images/machine.png" alt="Machine">
-          <div class="flip-instruction">Click to flip</div>
         </div>
         <div class="flip-card-back">
           <strong>Meaning:</strong> Represents intricate systems with multiple interacting parts.
@@ -1670,11 +1596,15 @@
         </div>
       </div>
     </div>
-  </div> <!-- End of card-container -->
-
+  </div>  End of card-container -->
+  
   <!-- Footer -->
-  <footer>
-    Information Design by <a href="http://www.dhvanijadav.com" target="_blank">Dhvani Jadav</a>
+  <footer alignment="left">
+    Information Design by <a href="http://www.sankethajare.com" target="_blank">Sanket Hajare & <a href="http://www.dhvanijadav.com" target="_blank">Dhvani Jadav & </a>
+  </footer>
+
+  <footer style="text-align: right;">
+    Information Visualisation inspiration by Anna Vital
   </footer>
 
   <!-- JavaScript for card flipping and search functionality -->
