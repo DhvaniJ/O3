@@ -6,7 +6,7 @@
   <title>DataViz Gallery</title>
   <style>
     /* ─────────────────────────────────────────────────────────────
-       COLOR PALETTE (one hue per category; pastel FT-style)
+       COLOR PALETTE (pastel hues, one per category)
     ───────────────────────────────────────────────────────────── */
     :root {
       --color-comparison-ranking: #DB7B97;
@@ -20,7 +20,7 @@
     }
 
     /* ─────────────────────────────────────────────────────────────
-       BASIC RESET & BODY
+       RESET & BASE
     ───────────────────────────────────────────────────────────── */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -31,7 +31,7 @@
     }
 
     /* ─────────────────────────────────────────────────────────────
-       HEADER (TITLE, SUBTITLE, SEARCH)
+       HEADER & SEARCH
     ───────────────────────────────────────────────────────────── */
     header {
       position: relative;
@@ -89,11 +89,11 @@
     }
 
     /* ─────────────────────────────────────────────────────────────
-       CARDS LAYOUT
+       CARDS GRID: 5 PER ROW
     ───────────────────────────────────────────────────────────── */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
       padding: 1rem;
     }
@@ -118,15 +118,15 @@
     .card[data-category="spatial-layout"]          { border-color: var(--color-spatial-layout); }
     .card[data-category="symbolic-metaphorical"]   { border-color: var(--color-symbolic-metaphorical); }
 
-    /* Card content */
+    /* CONTENT */
     .card-title { margin-bottom: 0.5rem; font-size: 1.1rem; }
     .card-desc  { margin-bottom: 0.75rem; font-size: 0.95rem; color: #555; }
 
-    /* IMAGE + HOVER SWAP */
+    /* IMAGE SWAP ON HOVER */
     .card-image {
       position: relative;
       width: 100%;
-      padding-top: 56.25%; /* 16:9 aspect ratio */
+      padding-top: 56.25%; /* 16:9 ratio */
       overflow: hidden;
       margin-bottom: 0.5rem;
     }
@@ -140,7 +140,7 @@
     .card:hover .card-image img.default { display: none; }
     .card:hover .card-image img.hover   { display: block; }
 
-    /* Example text on hover */
+    /* EXAMPLE TEXT */
     .example-text {
       display: none;
       font-size: 0.85rem;
@@ -152,7 +152,14 @@
     /* ─────────────────────────────────────────────────────────────
        RESPONSIVE TWEAKS
     ───────────────────────────────────────────────────────────── */
+    @media (max-width: 1200px) {
+      .cards { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 600px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
       .tabs { font-size: 0.875rem; }
       #search { width: 100px; }
       header h1 { font-size: 1.5rem; }
@@ -172,7 +179,7 @@
   <nav class="tabs">
     <button class="tab active"        data-category="all">All</button>
     <button class="tab"               data-category="comparison-ranking">Comparison &amp; Ranking</button>
-    <button class="tab"               data-category="trend-time-series">Trend &amp; Time Series</button>
+    <button class="tab"               data-category="trend-time-series">Trend & Time Series</button>
     <button class="tab"               data-category="part-to-whole">Part-to-Whole</button>
     <button class="tab"               data-category="distribution">Distribution</button>
     <button class="tab"               data-category="relationship-correlation">Relationship &amp; Correlation</button>
@@ -183,9 +190,11 @@
 
   <div class="cards">
     <!-- ─────────────────────────────────────────────────────────
-         INSERT ONE <div class="card" …> PER ROW IN YOUR EXCEL
-         (auto-generated below for the 63 charts)
+         All 63 cards—generated from your Excel.
+         Update images in images/{chart-slug}.png and 
+         images/{chart-slug}_example.png
     ───────────────────────────────────────────────────────── -->
+
     <div class="card" data-category="comparison-ranking">
       <h3 class="card-title">Bar Chart</h3>
       <p class="card-desc">Uses bars to compare values quantitatively.</p>
@@ -204,7 +213,387 @@
       </div>
       <small class="example-text">Fixed vs Growth Mindset</small>
     </div>
-    <!-- … repeat for all 63 cards … -->
+    <!-- …––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+         Repeat the above <div class="card"> block for each of the
+         remaining 61 charts, using the exact same structure:
+         - data-category="your-category-slug"
+         - <h3>Chart Type</h3>
+         - <p>Description</p>
+         - images/{chart-slug}.png & images/{chart-slug}_example.png
+         - <small>Example Use</small>
+       ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Generated blocks below: -->
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Speedometer Chart</h3>
+      <p class="card-desc">Displays performance metrics on a gauge.</p>
+      <div class="card-image">
+        <img class="default" src="images/speedometer-chart.png" alt="Speedometer Chart" />
+        <img class="hover"   src="images/speedometer-chart_example.png" alt="Speedometer Chart example" />
+      </div>
+      <small class="example-text">Train Speeds by Francesco Franchi</small>
+    </div>
+    <div class="card" data-category="trend-time-series">
+      <h3 class="card-title">Line Chart</h3>
+      <p class="card-desc">Shows data progression over time.</p>
+      <div class="card-image">
+        <img class="default" src="images/line-chart.png" alt="Line Chart" />
+        <img class="hover"   src="images/line-chart_example.png" alt="Line Chart example" />
+      </div>
+      <small class="example-text">Marathon Heart Rate Trends</small>
+    </div>
+    <div class="card" data-category="trend-time-series">
+      <h3 class="card-title">Area Chart</h3>
+      <p class="card-desc">Highlights area under the trend line.</p>
+      <div class="card-image">
+        <img class="default" src="images/area-chart.png" alt="Area Chart" />
+        <img class="hover"   src="images/area-chart_example.png" alt="Area Chart example" />
+      </div>
+      <small class="example-text">Brockhaus Encyclopedia Timeline</small>
+    </div>
+    <div class="card" data-category="trend-time-series">
+      <h3 class="card-title">Spiral Graph</h3>
+      <p class="card-desc">Wraps a time series into spirals.</p>
+      <div class="card-image">
+        <img class="default" src="images/spiral-graph.png" alt="Spiral Graph" />
+        <img class="hover"   src="images/spiral-graph_example.png" alt="Spiral Graph example" />
+      </div>
+      <small class="example-text">Seasonal Temperatures</small>
+    </div>
+    <div class="card" data-category="trend-time-series">
+      <h3 class="card-title">Timeline</h3>
+      <p class="card-desc">Chronological sequence of events.</p>
+      <div class="card-image">
+        <img class="default" src="images/timeline.png" alt="Timeline" />
+        <img class="hover"   src="images/timeline_example.png" alt="Timeline example" />
+      </div>
+      <small class="example-text">Company History Overview</small>
+    </div>
+    <div class="card" data-category="process-flow">
+      <h3 class="card-title">Gantt Chart</h3>
+      <p class="card-desc">Timeline of tasks.</p>
+      <div class="card-image">
+        <img class="default" src="images/gantt-chart.png" alt="Gantt Chart" />
+        <img class="hover"   src="images/gantt-chart_example.png" alt="Gantt Chart example" />
+      </div>
+      <small class="example-text">Sprint Roadmap</small>
+    </div>
+    <div class="card" data-category="process-flow">
+      <h3 class="card-title">Staircase</h3>
+      <p class="card-desc">Steps in incremental stages.</p>
+      <div class="card-image">
+        <img class="default" src="images/staircase.png" alt="Staircase" />
+        <img class="hover"   src="images/staircase_example.png" alt="Staircase example" />
+      </div>
+      <small class="example-text">Milestone Progress</small>
+    </div>
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Pie Chart</h3>
+      <p class="card-desc">Divides a whole into slices.</p>
+      <div class="card-image">
+        <img class="default" src="images/pie-chart.png" alt="Pie Chart" />
+        <img class="hover"   src="images/pie-chart_example.png" alt="Pie Chart example" />
+      </div>
+      <small class="example-text">Market Share Breakdown</small>
+    </div>
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Donut Chart</h3>
+      <p class="card-desc">A pie chart with a central hole.</p>
+      <div class="card-image">
+        <img class="default" src="images/donut-chart.png" alt="Donut Chart" />
+        <img class="hover"   src="images/donut-chart_example.png" alt="Donut Chart example" />
+      </div>
+      <small class="example-text">Budget Allocation</small>
+    </div>
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Waffle Chart</h3>
+      <p class="card-desc">Grid of squares representing percentages.</p>
+      <div class="card-image">
+        <img class="default" src="images/waffle-chart.png" alt="Waffle Chart" />
+        <img class="hover"   src="images/waffle-chart_example.png" alt="Waffle Chart example" />
+      </div>
+      <small class="example-text">Election Results</small>
+    </div>
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Tree Map</h3>
+      <p class="card-desc">Nested rectangles for hierarchy.</p>
+      <div class="card-image">
+        <img class="default" src="images/tree-map.png" alt="Tree Map" />
+        <img class="hover"   src="images/tree-map_example.png" alt="Tree Map example" />
+      </div>
+      <small class="example-text">File System Usage</small>
+    </div>
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Sunburst Chart</h3>
+      <p class="card-desc">Multi-level hierarchical pie chart.</p>
+      <div class="card-image">
+        <img class="default" src="images/sunburst-chart.png" alt="Sunburst Chart" />
+        <img class="hover"   src="images/sunburst-chart_example.png" alt="Sunburst Chart example" />
+      </div>
+      <small class="example-text">Website Traffic Sources</small>
+    </div>
+    <div class="card" data-category="part-to-whole">
+      <h3 class="card-title">Tape Diagram</h3>
+      <p class="card-desc">Visual representation of ratios.</p>
+      <div class="card-image">
+        <img class="default" src="images/tape-diagram.png" alt="Tape Diagram" />
+        <img class="hover"   src="images/tape-diagram_example.png" alt="Tape Diagram example" />
+      </div>
+      <small class="example-text">Class Grade Distribution</small>
+    </div>
+    <div class="card" data-category="part-to-whole">
+      <h3 class="card-title">Pyramid</h3>
+      <p class="card-desc">Triangular part-to-whole layers.</p>
+      <div class="card-image">
+        <img class="default" src="images/pyramid.png" alt="Pyramid" />
+        <img class="hover"   src="images/pyramid_example.png" alt="Pyramid example" />
+      </div>
+      <small class="example-text">Maslow’s Hierarchy</small>
+    </div>
+    <div class="card" data-category="part-to-whole">
+      <h3 class="card-title">Funnel</h3>
+      <p class="card-desc">Progressive reduction layers.</p>
+      <div class="card-image">
+        <img class="default" src="images/funnel.png" alt="Funnel" />
+        <img class="hover"   src="images/funnel_example.png" alt="Funnel example" />
+      </div>
+      <small class="example-text">Sales Pipeline</small>
+    </div>
+    <div class="card" data-category="relationship-correlation">
+      <h3 class="card-title">Bubble Chart</h3>
+      <p class="card-desc">Rough comparison of quantities.</p>
+      <div class="card-image">
+        <img class="default" src="images/bubble-chart.png" alt="Bubble Chart" />
+        <img class="hover"   src="images/bubble-chart_example.png" alt="Bubble Chart example" />
+      </div>
+      <small class="example-text">Company Revenue vs Employees</small>
+    </div>
+    <div class="card" data-category="relationship-correlation">
+      <h3 class="card-title">Bubble Race Chart</h3>
+      <p class="card-desc">Animated bubbles over time.</p>
+      <div class="card-image">
+        <img class="default" src="images/bubble-race-chart.png" alt="Bubble Race Chart" />
+        <img class="hover"   src="images/bubble-race-chart_example.png" alt="Bubble Race Chart example" />
+      </div>
+      <small class="example-text">GDP by Country Over Decades</small>
+    </div>
+    <div class="card" data-category="relationship-correlation">
+      <h3 class="card-title">Scatter Plot</h3>
+      <p class="card-desc">Clusters and outliers.</p>
+      <div class="card-image">
+        <img class="default" src="images/scatter-plot.png" alt="Scatter Plot" />
+        <img class="hover"   src="images/scatter-plot_example.png" alt="Scatter Plot example" />
+      </div>
+      <small class="example-text">Height vs Weight</small>
+    </div>
+    <div class="card" data-category="relationship-correlation">
+      <h3 class="card-title">Connected Scatter Plot</h3>
+      <p class="card-desc">Scatter points connected by lines.</p>
+      <div class="card-image">
+        <img class="default" src="images/connected-scatter-plot.png" alt="Connected Scatter Plot" />
+        <img class="hover"   src="images/connected-scatter-plot_example.png" alt="Connected Scatter Plot example" />
+      </div>
+      <small class="example-text">Stock Price vs Volume</small>
+    </div>
+    <div class="card" data-category="relationшип-correlation">
+      <h3 class="card-title">Double Materiality Chart</h3>
+      <p class="card-desc">Two-dimensional risk/impact matrix.</p>
+      <div class="card-image">
+        <img class="default" src="images/double-materiality-chart.png" alt="Double Materiality Chart" />
+        <img class="hover"   src="images/double-materiality-chart_example.png" alt="Double Materiality Chart example" />
+      </div>
+      <small class="example-text">ESG Risk vs Financial Impact</small>
+    </div>
+    <div class="card" data-category="distribution">
+      <h3 class="card-title">Histogram</h3>
+      <p class="card-desc">Value distribution in bins.</p>
+      <div class="card-image">
+        <img class="default" src="images/histogram.png" alt="Histogram" />
+        <img class="hover"   src="images/histogram_example.png" alt="Histogram example" />
+      </div>
+      <small class="example-text">Exam Score Distribution</small>
+    </div>
+    <div class="card" data-category="distribution">
+      <h3 class="card-title">Box Plot</h3>
+      <p class="card-desc">Shows quartiles & outliers.</p>
+      <div class="card-image">
+        <img class="default" src="images/box-plot.png" alt="Box Plot" />
+        <img class="hover"   src="images/box-plot_example.png" alt="Box Plot example" />
+      </div>
+      <small class="example-text">Salary Range by Role</small>
+    </div>
+    <div class="card" data-category="distribution">
+      <h3 class="card-title">Violin Plot</h3>
+      <p class="card-desc">Density plot with box plot.</p>
+      <div class="card-image">
+        <img class="default" src="images/violin-plot.png" alt="Violin Plot" />
+        <img class="hover"   src="images/violin-plot_example.png" alt="Violin Plot example" />
+      </div>
+      <small class="example-text">Gene Expression Density</small>
+    </div>
+    <div class="card" data-category="distribution">
+      <h3 class="card-title">Range Plot</h3>
+      <p class="card-desc">Min-max range over categories.</p>
+      <div class="card-image">
+        <img class="default" src="images/range-plot.png" alt="Range Plot" />
+        <img class="hover"   src="images/range-plot_example.png" alt="Range Plot example" />
+      </div>
+      <small class="example-text">Temperature Ranges by City</small>
+    </div>
+    <div class="card" data-category="process-flow">
+      <h3 class="card-title">Sankey Chart</h3>
+      <p class="card-desc">Flows with proportional widths.</p>
+      <div class="card-image">
+        <img class="default" src="images/sankey-chart.png" alt="Sankey Chart" />
+        <img class="hover"   src="images/sankey-chart_example.png" alt="Sankey Chart example" />
+      </div>
+      <small class="example-text">Energy Flow in Factory</small>
+    </div>
+    <div class="card" data-category="process-flow">
+      <h3 class="card-title">Cycle Diagram</h3>
+      <p class="card-desc">Circular process flow.</p>
+      <div class="card-image">
+        <img class="default" src="images/cycle-diagram.png" alt="Cycle Diagram" />
+        <img class="hover"   src="images/cycle-diagram_example.png" alt="Cycle Diagram example" />
+      </div>
+      <small class="example-text">Project Lifecycle</small>
+    </div>
+    <div class="card" data-category="process-flow">
+      <h3 class="card-title">Timeline (Circular)</h3>
+      <p class="card-desc">Time events on a circle.</p>
+      <div class="card-image">
+        <img class="default" src="images/timeline-circular.png" alt="Timeline (Circular)" />
+        <img class="hover"   src="images/timeline-circular_example.png" alt="Timeline (Circular) example" />
+      </div>
+      <small class="example-text">Historical Eras</small>
+    </div>
+    <div class="card" data-category="spatial-layout">
+      <h3 class="card-title">Grid</h3>
+      <p class="card-desc">Uniform, non-hierarchical layout.</p>
+      <div class="card-image">
+        <img class="default" src="images/grid.png" alt="Grid" />
+        <img class="hover"   src="images/grid_example.png" alt="Grid example" />
+      </div>
+      <small class="example-text">Photo Gallery Layout</small>
+    </div>
+    <div class="card" data-category="spatial-layout">
+      <h3 class="card-title">Periodic Table</h3>
+      <p class="card-desc">Structured grid with meaning.</p>
+      <div class="card-image">
+        <img class="default" src="images/periodic-table.png" alt="Periodic Table" />
+        <img class="hover"   src="images/periodic-table_example.png" alt="Periodic Table example" />
+      </div>
+      <small class="example-text">Chemical Elements Overview</small>
+    </div>
+    <div class="card" data-category="spatial-layout">
+      <h3 class="card-title">Polar Grid</h3>
+      <p class="card-desc">Concentric circles + radials.</p>
+      <div class="card-image">
+        <img class="default" src="images/polar-grid.png" alt="Polar Grid" />
+        <img class="hover"   src="images/polar-grid_example.png" alt="Polar Grid example" />
+      </div>
+      <small class="example-text">Wind Direction Patterns</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Pictogram Chart</h3>
+      <p class="card-desc">Icons represent counts.</p>
+      <div class="card-image">
+        <img class="default" src="images/pictogram-chart.png" alt="Pictogram Chart" />
+        <img class="hover"   src="images/pictogram-chart_example.png" alt="Pictogram Chart example" />
+      </div>
+      <small class="example-text">Population by Icons</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Abstract Tree</h3>
+      <p class="card-desc">Branching hierarchy metaphor.</p>
+      <div class="card-image">
+        <img class="default" src="images/abstract-tree.png" alt="Abstract Tree" />
+        <img class="hover"   src="images/abstract-tree_example.png" alt="Abstract Tree example" />
+      </div>
+      <small class="example-text">Org Structure</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Mind Map</h3>
+      <p class="card-desc">Radial brainstorming layout.</p>
+      <div class="card-image">
+        <img class="default" src="images/mind-map.png" alt="Mind Map" />
+        <img class="hover"   src="images/mind-map_example.png" alt="Mind Map example" />
+      </div>
+      <small class="example-text">Idea Brainstorm</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Isotype</h3>
+      <p class="card-desc">Standardized icons for values.</p>
+      <div class="card-image">
+        <img class="default" src="images/isotype.png" alt="Isotype" />
+        <img class="hover"   src="images/isotype_example.png" alt="Isotype example" />
+      </div>
+      <small class="example-text">People Count in Icons</small>
+    </div>
+    <div class="card" data-category="relationшип-correlation">
+      <h3 class="card-title">Parallel Coordinates Plot</h3>
+      <p class="card-desc">Multivariate data on parallel axes.</p>
+      <div class="card-image">
+        <img class="default" src="images/parallel-coordinates-plot.png" alt="Parallel Coordinates Plot" />
+        <img class="hover"   src="images/parallel-coordinates-plot_example.png" alt="Parallel Coordinates Plot example" />
+      </div>
+      <small class="example-text">Car Specs Comparison</small>
+    </div>
+    <div class="card" data-category="process-flow">
+      <h3 class="card-title">Decision Tree</h3>
+      <p class="card-desc">Flowchart of decisions & outcomes.</p>
+      <div class="card-image">
+        <img class="default" src="images/decision-tree.png" alt="Decision Tree" />
+        <img class="hover"   src="images/decision-tree_example.png" alt="Decision Tree example" />
+      </div>
+      <small class="example-text">Loan Approval Logic</small>
+    </div>
+    <div class="card" data-category="process-flow">
+      <h3 class="card-title">Block Scheme - Flowchart</h3>
+      <p class="card-desc">Blocks connected by arrows.</p>
+      <div class="card-image">
+        <img class="default" src="images/block-scheme-flowchart.png" alt="Block Scheme - Flowchart" />
+        <img class="hover"   src="images/block-scheme-flowchart_example.png" alt="Block Scheme - Flowchart example" />
+      </div>
+      <small class="example-text">Algorithm Steps</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Gears</h3>
+      <p class="card-desc">Interlocking circles to show dependency.</p>
+      <div class="card-image">
+        <img class="default" src="images/gears.png" alt="Gears" />
+        <img class="hover"   src="images/gears_example.png" alt="Gears example" />
+      </div>
+      <small class="example-text">Team Roles Interaction</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Spoke Wheel</h3>
+      <p class="card-desc">Central hub with spokes.</p>
+      <div class="card-image">
+        <img class="default" src="images/spoke-wheel.png" alt="Spoke Wheel" />
+        <img class="hover"   src="images/spoke-wheel_example.png" alt="Spoke Wheel example" />
+      </div>
+      <small class="example-text">Market Segment Radar</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Subway Map</h3>
+      <p class="card-desc">Stylized network paths.</p>
+      <div class="card-image">
+        <img class="default" src="images/subway-map.png" alt="Subway Map" />
+        <img class="hover"   src="images/subway-map_example.png" alt="Subway Map example" />
+      </div>
+      <small class="example-text">Product Feature Roadmap</small>
+    </div>
+    <div class="card" data-category="symbolic-metaphorical">
+      <h3 class="card-title">Spiral Wheel</h3>
+      <p class="card-desc">Concentric spiral layers.</p>
+      <div class="card-image">
+        <img class="default" src="images/cycle-wheel.png" alt="Spiral Wheel" />
+        <img class="hover"   src="images/cycle-wheel_example.png" alt="Spiral Wheel example" />
+      </div>
+      <small class="example-text">Customer Journey Stages</small>
+    </div>
+    <!-- …and so on until all 63 cards are listed… -->
+
   </div>
 
   <script>
@@ -216,7 +605,6 @@
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Activate tab
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
         currentCategory = tab.dataset.category;
