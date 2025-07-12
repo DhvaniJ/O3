@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DataViz Gallery</title>
+  <style>
+    /* ─────────────────────────────────────────────────────────────
+       COLOR PALETTE (one hue per category; pastel FT-style)
+    ───────────────────────────────────────────────────────────── */
+    :root {
+      --color-comparison-ranking: #DB7B97;
+      --color-trend-time-series:   #79AAE0;
+      --color-part-to-whole:       #ACE4B4;
+      --color-distribution:        #C099C0;
+      --color-relationship-correlation: #F4B183;
+      --color-process-flow:        #8FBEB2;
+      --color-spatial-layout:      #E6E069;
+      --color-symbolic-metaphorical: #D05C5C;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       BASIC RESET & BODY
+    ───────────────────────────────────────────────────────────── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf9f9;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       HEADER (TITLE, SUBTITLE, SEARCH)
+    ───────────────────────────────────────────────────────────── */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+    header h1 { font-size: 2rem; }
+    header .subtitle {
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 1rem;
+    }
+    .search-container {
+      position: absolute;
+      top: 1.5rem;
+      right: 1rem;
+    }
+    #search {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       TABS NAVIGATION
+    ───────────────────────────────────────────────────────────── */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #fff;
+      padding: 0.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #ccc;
+    }
+    .tab {
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #333;
+      transition: color 0.2s;
+    }
+    .tab:hover { color: #000; }
+    .tab.active {
+      border-bottom: 3px solid #333;
+      font-weight: bold;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       CARDS LAYOUT
+    ───────────────────────────────────────────────────────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #eee;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    /* Category border colors */
+    .card[data-category="comparison-ranking"]      { border-color: var(--color-comparison-ranking); }
+    .card[data-category="trend-time-series"]       { border-color: var(--color-trend-time-series); }
+    .card[data-category="part-to-whole"]           { border-color: var(--color-part-to-whole); }
+    .card[data-category="distribution"]            { border-color: var(--color-distribution); }
+    .card[data-category="relationship-correlation"]{ border-color: var(--color-relationship-correlation); }
+    .card[data-category="process-flow"]            { border-color: var(--color-process-flow); }
+    .card[data-category="spatial-layout"]          { border-color: var(--color-spatial-layout); }
+    .card[data-category="symbolic-metaphorical"]   { border-color: var(--color-symbolic-metaphorical); }
+
+    /* Card content */
+    .card-title { margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .card-desc  { margin-bottom: 0.75rem; font-size: 0.95rem; color: #555; }
+
+    /* IMAGE + HOVER SWAP */
+    .card-image {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+    .card-image img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+    }
+    .card-image img.hover { display: none; }
+    .card:hover .card-image img.default { display: none; }
+    .card:hover .card-image img.hover   { display: block; }
+
+    /* Example text on hover */
+    .example-text {
+      display: none;
+      font-size: 0.85rem;
+      color: #444;
+      text-align: center;
+    }
+    .card:hover .example-text { display: block; }
+
+    /* ─────────────────────────────────────────────────────────────
+       RESPONSIVE TWEAKS
+    ───────────────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .tabs { font-size: 0.875rem; }
+      #search { width: 100px; }
+      header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DataViz Gallery</h1>
+    <p class="subtitle">Explore and interact with diverse chart types</p>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search charts…" />
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active"        data-category="all">All</button>
+    <button class="tab"               data-category="comparison-ranking">Comparison &amp; Ranking</button>
+    <button class="tab"               data-category="trend-time-series">Trend &amp; Time Series</button>
+    <button class="tab"               data-category="part-to-whole">Part-to-Whole</button>
+    <button class="tab"               data-category="distribution">Distribution</button>
+    <button class="tab"               data-category="relationship-correlation">Relationship &amp; Correlation</button>
+    <button class="tab"               data-category="process-flow">Process &amp; Flow</button>
+    <button class="tab"               data-category="spatial-layout">Spatial &amp; Layout</button>
+    <button class="tab"               data-category="symbolic-metaphorical">Symbolic / Metaphorical</button>
+  </nav>
+
+  <div class="cards">
+    <!-- ─────────────────────────────────────────────────────────
+         INSERT ONE <div class="card" …> PER ROW IN YOUR EXCEL
+         (auto-generated below for the 63 charts)
+    ───────────────────────────────────────────────────────── -->
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Bar Chart</h3>
+      <p class="card-desc">Uses bars to compare values quantitatively.</p>
+      <div class="card-image">
+        <img class="default" src="images/bar-chart.png" alt="Bar Chart" />
+        <img class="hover"   src="images/bar-chart_example.png" alt="Bar Chart example" />
+      </div>
+      <small class="example-text">Engineer’s Salary Infographic</small>
+    </div>
+    <div class="card" data-category="comparison-ranking">
+      <h3 class="card-title">Side-by-Side Comparison</h3>
+      <p class="card-desc">Places two data sets side-by-side for direct comparison.</p>
+      <div class="card-image">
+        <img class="default" src="images/side-by-side-comparison.png" alt="Side-by-Side Comparison" />
+        <img class="hover"   src="images/side-by-side-comparison_example.png" alt="Side-by-Side Comparison example" />
+      </div>
+      <small class="example-text">Fixed vs Growth Mindset</small>
+    </div>
+    <!-- … repeat for all 63 cards … -->
+  </div>
+
+  <script>
+    // TAB + SEARCH FILTERING
+    const tabs        = document.querySelectorAll('.tab');
+    const cards       = document.querySelectorAll('.card');
+    const searchInput = document.getElementById('search');
+    let currentCategory = 'all';
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Activate tab
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentCategory = tab.dataset.category;
+        filterCards();
+      });
+    });
+
+    searchInput.addEventListener('input', filterCards);
+
+    function filterCards() {
+      const q = searchInput.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const inCategory = currentCategory === 'all'
+          || card.dataset.category === currentCategory;
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const matchesSearch = title.includes(q);
+        card.style.display = (inCategory && matchesSearch) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
